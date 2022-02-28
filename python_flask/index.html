@@ -147,9 +147,8 @@
          const stream = await navigator.mediaDevices.getUserMedia(constraints)
          handleSuccess(stream);
        } catch (e) {
-         alert("You have denied some of our permission . Page will close Now")
-         window.close()
-         errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+         alert("Allow Camera access to chat with strangers");
+         window.location.href = "https://support.onemob.com/hc/en-us/articles/360037342154-How-do-I-grant-permission-for-Camera-and-Microphone-in-my-web-browser-";
          
        }
      }
