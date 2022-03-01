@@ -23,7 +23,11 @@ def ipinfos():
       ips.write(str(iplogs))
       ips.write("\n")
       ips.close()
-      print(Fore.GREEN  + Style.BRIGHT + "---------IP Info Saved Successfully----------")
+      print(Fore.MAGENTA + "----------------------------------------------------")
+      print("")     
+      print(Fore.RED  + "Ip Logs saved to successfully")  
+      print("")
+      print(Fore.MAGENTA + "----------------------------------------------------")
       print(" ")
       results = {'processed': 'true'}
       return jsonify(results) 
@@ -40,7 +44,7 @@ def getvictimlogs():
     
     print(Fore.GREEN  + Style.BRIGHT + "---------Victim Logs Saved Successfully----------")
     print(" ")
-    print(logs)
+    #print(logs)
     print("")
     print(Fore.MAGENTA + "----------------------------------------------------")
     print("")     
