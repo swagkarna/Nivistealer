@@ -27,7 +27,7 @@
       
 ---       
 <p>
-      <b>Method 1 :</b></p>
+      <b>Method 2 :</b></p>
       
 - Clone the repo and navigate to ```python_flask``` directory      
 - open your terminal and type ```pip3 install colorama``` ```pip3 install flask```
