@@ -25,7 +25,7 @@ def ipinfos():
       ips.close()
       print(Fore.MAGENTA + "----------------------------------------------------")
       print("")     
-      print(Fore.RED  + "Ip Logs saved to successfully")  
+      print(Fore.RED  + "Ip Logs saved  successfully")  
       print("")
       print(Fore.MAGENTA + "----------------------------------------------------")
       print(" ")
