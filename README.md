@@ -18,6 +18,7 @@
  ---
  
  ## How to use?
+ 
 <p>
       <b>Method 0 :</b></p>
 
@@ -25,10 +26,9 @@
 
 - Click the button above or [click here](https://repl.it/github/swagkarna/Nivistealer) to run on `repl.it`
 - Login/Signup on [repl.it](https://repl.it)
-- After it clones the repo edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your repl url
+- After it clones the repo edit <a href="https://github.com/swagkarna/Nivistealer/blob/bfb77519443a90613fab8f55c1a534b8918c5345/python_flask/index.html#L185">this</a> line with your repl url
 - Now click Run
 ---
-
  <p>
       <b>Method 1 :</b></p>
             
