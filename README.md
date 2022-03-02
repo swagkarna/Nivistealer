@@ -18,13 +18,12 @@
  ## How to use?
 <p>
       <b>Method 0 :</b></p>
-[![Run on Repl.it](https://repl.it/badge/github/swagkarna/Nivistealer)](https://repl.it/github/swagkarna/Nivistealer)]
+
+ [![Run on Repl.it](https://repl.it/badge/github/swagkarna/Nivistealer)](https://repl.it/github/swagkarna/Nivistealer)
 
 - Click the button above
 - Login/Signup on [repl.it](https://repl.it)
-- After it clones the repo edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your url
-- 
-
+- After it clones the repo , click on the run button
 
  <p>
       <b>Method 1 :</b></p>
