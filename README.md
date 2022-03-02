@@ -11,6 +11,7 @@
  - Steal Network and Battery Info
  - Uses  Device Gps  to steal exact location
  - Steal pic from front camera
+ - Steal text from victim clipboard (added recently) 
  - Send logs to discord also save them locally in a txt file
  - Works on android,windows,linux,mac os
  - Uses iframe to load live website to make phishing attack more reliable

@@ -25,7 +25,7 @@ def ipinfos():
       ips.close()
       print(Fore.MAGENTA + "----------------------------------------------------")
       print("")     
-      print(Fore.RED  + "Ip Logs saved  successfully")  
+      print(Fore.RED  + "Ip Logs saved to **ipinfo.txt** ")  
       print("")
       print(Fore.MAGENTA + "----------------------------------------------------")
       print(" ")
@@ -42,8 +42,8 @@ def getvictimlogs():
     log.write("\n")
     log.close()
     
-    print(Fore.GREEN  + Style.BRIGHT + "---------Victim Logs Saved Successfully----------")
-    print(" ")
+    
+   
     print(logs)
     print("")
     print(Fore.MAGENTA + "----------------------------------------------------")
