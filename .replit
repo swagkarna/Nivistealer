@@ -1,0 +1,2 @@
+language = "python3"
+run = "cd python_flask && python nivistealer.py"

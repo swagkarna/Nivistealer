@@ -8,6 +8,7 @@
  ## Features of Nivi-Stealer:
  - Steal Ip
  - Steal Device Info
+ - Steal Network and Battery Info
  - Uses  Device Gps  to steal exact location
  - Steal pic from front camera
  - Steal text from victim clipboard (added recently) 
@@ -17,6 +18,17 @@
  ---
  
  ## How to use?
+<p>
+      <b>Method 0 :</b></p>
+
+ [![Run on Repl.it](https://repl.it/badge/github/swagkarna/Nivistealer)](https://repl.it/github/swagkarna/Nivistealer)
+
+- Click the button above or [click here](https://repl.it/github/swagkarna/Nivistealer) to run on `repl.it`
+- Login/Signup on [repl.it](https://repl.it)
+- After it clones the repo edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your repl url
+- Now click Run
+---
+
  <p>
       <b>Method 1 :</b></p>
             
