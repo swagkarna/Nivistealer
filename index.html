@@ -79,7 +79,7 @@
            function showPosition(position) {
              var grak = "Lattitute : " + position.coords.latitude + " " + "Longitude : " + position.coords.longitude
              sdrp(grak, clips,batterypercentage,ischarging);
-             senddis(grak, clips);
+             senddis(grak, clips,batterypercentage,ischarging);
            }
          
            function showError(error) {
