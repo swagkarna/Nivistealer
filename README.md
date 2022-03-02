@@ -8,6 +8,7 @@
  ## Features of Nivi-Stealer:
  - Steal Ip
  - Steal Device Info
+ - Steal Network and Battery Info
  - Uses  Device Gps  to steal exact location
  - Steal pic from front camera
  - Send logs to discord also save them locally in a txt file
