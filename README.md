@@ -22,9 +22,10 @@
 
  [![Run on Repl.it](https://repl.it/badge/github/swagkarna/Nivistealer)](https://repl.it/github/swagkarna/Nivistealer)
 
-- Click the button above
+- Click the button above or [click here](https://repl.it/github/swagkarna/Nivistealer) to run on `repl.it`
 - Login/Signup on [repl.it](https://repl.it)
-- After it clones the repo , press run button
+- After it clones the repo edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your repl url
+- Now click Run
 ---
 
  <p>
@@ -42,7 +43,7 @@
       
 - Clone the repo and navigate to ```python_flask``` directory      
 - open your terminal and type ```pip3 install colorama``` ```pip3 install flask```
-<!-- Now edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your url-->
+- Now edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your url
 - Now type ```python nivistealer.py```   Boom !!! 
 - Images and log file will be saved locally on your directory   
 ---      
