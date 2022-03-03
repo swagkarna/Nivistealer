@@ -6,7 +6,7 @@
  
  ---
  ## Features of Nivi-Stealer:
- - Steal Ip
+ - Steal Victim Ip
  - Steal Device Info
  - Steal Network and Battery Info
  - Uses  Device Gps  to steal exact location
