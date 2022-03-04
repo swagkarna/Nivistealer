@@ -50,7 +50,7 @@
 - Now type ```python nivistealer.py```   Boom !!! 
 - Images and log file will be saved locally on your directory   
 ---      
-## *Nivistealer in action* :
+## *Nivistealer in action*[Method 2] :
 
 https://user-images.githubusercontent.com/46685308/156226849-ccce8ade-552a-49bd-be93-eb14aaed8971.mp4
 
