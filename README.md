@@ -5,6 +5,8 @@
  </p>
  
  ---
+ * **If you like the tool and for my personal motivation so as to develop other tools please  leave a +1 star** 
+  ---
  ## Features of Nivi-Stealer:
  - Steal Victim Ip
  - Steal Device Info
