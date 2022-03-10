@@ -49,11 +49,20 @@
 - Now edit <a href="https://github.com/swagkarna/Nivistealer/blob/cd447284a17844d019fa116f2cd5665de9bd1c6b/python_flask/index.html#L142">this</a> line with your url
 - Now type ```python nivistealer.py```   Boom !!! 
 - Images and log file will be saved locally on your directory   
----      
+---  
+## Donate
+- BTC
+```
+bc1q37nqagapyt7nnu38p4pqu4hq2xgmumwklzn24l
+```
+- ETH
+```
+0xF3eBc9bA1bCD30C3efbAd298A73663691F4DB803
+```
+---    
 ## *Nivistealer in action*[Method 2] :
 
 https://user-images.githubusercontent.com/46685308/156226849-ccce8ade-552a-49bd-be93-eb14aaed8971.mp4
-
 ---
 ### Discalimer :
 #### Use this only for educational Purpose....  I am not responsible for your action...Love you Guys.. Stay safe !!! Stay legal !!!
