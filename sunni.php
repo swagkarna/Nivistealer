@@ -1,7 +1,7 @@
 <?php
  
 /*
-* Write your logic to manage  data
+* Write your logic to manage  the data
 * like storing data in database
 */
 error_reporting(0);
