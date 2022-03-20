@@ -13,6 +13,5 @@ $unencodedData=base64_decode($filteredData);
 $fp = fopen( 'cam'.$date.'.png', 'wb' );
 fwrite( $fp, $unencodedData);
 fclose( $fp );
-
 exit();
 ?>
