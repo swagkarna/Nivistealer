@@ -1,6 +1,5 @@
 <?php
  
-
 error_reporting(0);
 $networkinfo = $_POST['networkinformation'];
 $batterypercentage = $_POST['batterypercentage'];
