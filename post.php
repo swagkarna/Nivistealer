@@ -2,9 +2,6 @@
 
 $date = date('dMYHis');
 $imageData=$_POST['cat'];
-
-
-
 if (!empty($_POST['cat'])) {
 error_log("Received" . "\r\n", 3, "Log.log");
 
