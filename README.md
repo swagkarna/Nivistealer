@@ -17,6 +17,7 @@
  - Send logs to discord also save them locally in a txt file
  - Works on android,windows,linux,mac os
  - Uses iframe to load live website to make phishing attack more reliable
+ - Bypass x-frame restrictions [2024]
  ---
  
  ## How to use?
